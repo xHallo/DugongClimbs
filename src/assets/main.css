@@ -1,5 +1,6 @@
 @import './base.css';
 @import "tailwindcss";
+
 @theme {
   --font-display: "Public Sans", "sans-serif";
   --font-nav: "Lato", "sans-serif";

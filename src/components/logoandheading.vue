@@ -1,16 +1,13 @@
 <script setup>
-defineProps({
-  msg: {
-    type: String,
-    required: true,
-  },
-})
+import instagramicon from "./icons/instagramicon.vue"
 </script>
 
 <template>
-  <div class="flex flex-row justify-between w-full h-4/6">
-            <div class="flex items-center justify-center space-x-2 w-1/3 ">
-              <img src="" alt="Instagram" class="w-100 h-6">
+  <div class="flex flex-row justify-between w-full h-34">
+            <div class="flex items-center justify-start pl-30 w-1/3 ">
+              <a href="https://www.instagram.com/dugongclimbs/" target="_blank">
+                <instagramicon />
+              </a>
             </div>
             <div class="flex items-center justify-center space-x-2 w-1/3">
               <img src="" alt="dugong" class="w-100 h-6">
