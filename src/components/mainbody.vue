@@ -132,7 +132,7 @@ function calculateCartPrice(){
               <div> ${{calculateCartPrice()}} </div>
             </div>
             <div class="flex justify-center items-center pt-5">
-             <button class="bg-black w-2/3 hover:cursor-pointer h-9 rounded-lg text-white" type="Button" @click="$emit('openCheckout',false)">Checkout</button>
+             <button @click="$router.push('/checkout')" class="bg-black w-2/3 hover:cursor-pointer h-9 rounded-lg text-white" type="Button" >Checkout</button>
             </div>
           </div>
         </div>
