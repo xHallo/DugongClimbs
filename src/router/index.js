@@ -12,8 +12,24 @@ const routes = [
   { path: '/members', component: Members, name: 'members' },
   { path: '/shop', component: Shop, name: 'shop' },
   { path: '/joinus', component: Joinus, name: 'Joinus' },
-  { path: '/checkout', component: Checkout }
-  
+  { path: '/checkout', 
+    component: Checkout ,
+    name:'Checkout',
+    props: route => {
+      if (!route.params.cartdet) {
+        console.warn('cartdet is undefined, defaulting to an empty array.');
+        console.log('cartdet param:', route.params.cartdet);
+        return { cartdet: [] };
+      }
+      
+      try {
+        return { cartdet: JSON.parse(route.params.cartdet) };
+      } catch (e) {
+        console.error('Failed to parse cartdet:', e);
+        return { cartdet: [] };
+      }
+    }
+  }
 ];
 
 const router = createRouter({

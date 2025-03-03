@@ -7,7 +7,7 @@ import "../assets/base.css";
 import Deleteicon from "./icons/delete.vue"
 import shirtdetails from "../shirts.json";
 import cartdetails from "../cart.json";
-import {ref, computed, onMounted, watchEffect, watch} from "vue";
+import {ref, computed, watchEffect, watch} from "vue";
 
 
 const shirtdet = ref(shirtdetails);
@@ -91,8 +91,6 @@ function calculateCartPrice(){
   }); 
   return totalprice.toFixed(2);
 }
-
-
 </script>
 
 
@@ -132,7 +130,7 @@ function calculateCartPrice(){
               <div> ${{calculateCartPrice()}} </div>
             </div>
             <div class="flex justify-center items-center pt-5">
-             <button @click="$router.push('/checkout')" class="bg-black w-2/3 hover:cursor-pointer h-9 rounded-lg text-white" type="Button" >Checkout</button>
+             <button @click="$router.push({ name: 'Checkout', params: { cartdet: JSON.stringify(cartdet.value ?? []) } })" class="bg-black w-2/3 hover:cursor-pointer h-9 rounded-lg text-white" type="Button" >Checkout</button>
             </div>
           </div>
         </div>
