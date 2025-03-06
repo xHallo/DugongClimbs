@@ -1,36 +1,42 @@
 [
   {
     "sampleimg":"DugongFlippers.png",
+    "backsampleimg":"DugongClimbsshirt.jpg",
     "shirtname": "The Dugongs",
     "shirtedition": "Prataflipper",
-    "shirtprice": "69"
+    "shirtprice": 69
   }, {
     "sampleimg":"DugongFlippers.png",
+    "backsampleimg":"DugongClimbsshirt.jpg",
     "shirtname": "The Dugongs",
     "shirtedition": "Burgerflipper",
-    "shirtprice": "6999"
+    "shirtprice": 6999
   },{
     "sampleimg":"DugongFlippers.png",
+    "backsampleimg":"DugongClimbsshirt.jpg",
     "shirtname": "The Dugongs",
     "shirtedition": "Stockflipper",
-    "shirtprice": "10"
+    "shirtprice": 10
   },
   {
     "sampleimg":"DugongFlippers.png",
+    "backsampleimg":"DugongClimbsshirt.jpg",
     "shirtname": "The Dugongs",
     "shirtedition": "niggaflipper",
-    "shirtprice": "10"
+    "shirtprice": 10
   },
   {
     "sampleimg":"DugongFlippers.png",
+    "backsampleimg":"DugongClimbsshirt.jpg",
     "shirtname": "The Dugongs",
     "shirtedition": "niggaflipper",
-    "shirtprice": "100"
+    "shirtprice": 100
   },
   {
     "sampleimg":"DugongFlippers.png",
+    "backsampleimg":"DugongClimbsshirt.jpg",
     "shirtname": "The Dugongs",
     "shirtedition": "niggaflipper",
-    "shirtprice": "1000000"
+    "shirtprice": 1000000
   }
 ]

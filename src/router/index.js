@@ -15,18 +15,16 @@ const routes = [
   { path: '/checkout', 
     component: Checkout ,
     name:'Checkout',
-    props: route => {
-      if (!route.params.cartdet) {
-        console.warn('cartdet is undefined, defaulting to an empty array.');
-        console.log('cartdet param:', route.params.cartdet);
-        return { cartdet: [] };
-      }
-      
+    props:route => {
       try {
-        return { cartdet: JSON.parse(route.params.cartdet) };
+        const decodedCart = route.query.cart 
+          ? JSON.parse(decodeURIComponent(route.query.cart)) 
+          : [];
+        console.log('Router Params:', decodedCart);
+        return { cart: decodedCart };
       } catch (e) {
-        console.error('Failed to parse cartdet:', e);
-        return { cartdet: [] };
+        console.warn('Failed to parse cartdet query:', e);
+        return { cart: [] };
       }
     }
   }

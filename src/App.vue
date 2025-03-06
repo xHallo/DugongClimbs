@@ -1,7 +1,6 @@
 <script setup>
 import topheading from '@/components/logoandheading.vue'
 import navbar from '@/components/navbar.vue'
-import checkoutpage from '@/components/checkoutpage.vue'
 import mainbody from '@/components/mainbody.vue'
 import footersection from '@/components/footer.vue'
 import {ref} from "vue";
