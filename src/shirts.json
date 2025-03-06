@@ -22,21 +22,21 @@
     "sampleimg":"DugongFlippers.png",
     "backsampleimg":"DugongClimbsshirt.jpg",
     "shirtname": "The Dugongs",
-    "shirtedition": "niggaflipper",
+    "shirtedition": "Eggflipper",
     "shirtprice": 10
   },
   {
     "sampleimg":"DugongFlippers.png",
     "backsampleimg":"DugongClimbsshirt.jpg",
     "shirtname": "The Dugongs",
-    "shirtedition": "niggaflipper",
+    "shirtedition": "Coinflipper",
     "shirtprice": 100
   },
   {
     "sampleimg":"DugongFlippers.png",
     "backsampleimg":"DugongClimbsshirt.jpg",
     "shirtname": "The Dugongs",
-    "shirtedition": "niggaflipper",
-    "shirtprice": 1000000
+    "shirtedition": "Pistolflipper",
+    "shirtprice": 100
   }
 ]
