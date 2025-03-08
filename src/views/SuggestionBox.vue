@@ -5,7 +5,7 @@ const suggestion = ref('');
 
 async function submitMessage(){
   try {
-    const response = await fetch('http://localhost:5000/submit-message', {
+    const response = await fetch('http://13.55.226.8:5000/submit-message', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

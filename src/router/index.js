@@ -20,7 +20,6 @@ const routes = [
         const decodedCart = route.query.cart 
           ? JSON.parse(decodeURIComponent(route.query.cart)) 
           : [];
-        console.log('Router Params:', decodedCart);
         return { cart: decodedCart };
       } catch (e) {
         console.warn('Failed to parse cartdet query:', e);

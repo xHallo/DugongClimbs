@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5000;
 
 
 app.use(bodyParser.json());
-app.use(cors({ origin: ['http://localhost:3000', 'http://http://13.55.226.8:3000/'] }))
+app.use(cors({ origin: ['http://localhost:3000', 'http://13.55.226.8:3000/'] }))
 
 
 async function sendTelegramNotification(message) {
@@ -50,7 +50,7 @@ const limiter = rateLimit({
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(process.cwd(), 'src','views', 'Home.vue')); // Adjust the path if needed
+    res.sendFile(path.join(process.cwd(), 'src','views', 'Home.vue')); 
 });
 
 app.use('/checkout', limiter);
@@ -67,7 +67,7 @@ app.post('/checkout', async (req, res) => {
 
   sendTelegramNotification(message);
   try {
-    const orderRef = db.collection('orders').doc(); // Creates a new document
+    const orderRef = db.collection('orders').doc(); // creates a new document
     await orderRef.set({
       name,
       email,

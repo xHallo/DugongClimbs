@@ -30,10 +30,8 @@ const checkoutCart = computed(() => {
       grouped[key].sizes[item.size] = 0;
     }
     grouped[key].sizes[item.size] += item.quantity;
-    console.log("this is the sizes", Object.entries(grouped[key].sizes))
     grouped[key].totalPrice += parseFloat((item.quantity * item.shirtprice).toFixed(2));
   });
-  console.log("thisi s my groupsed objects", Object.values(grouped))
   
   return Object.values(grouped);
 });
@@ -61,7 +59,7 @@ async function submitCheckout() {
     }
 
     try {
-        const response = await fetch('http://13.55.226.8:3000/checkout', {
+        const response = await fetch('http://13.55.226.8:5000/checkout', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
