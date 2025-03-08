@@ -5,24 +5,23 @@ import bodyParser from 'body-parser';
 import { admin, db } from './firebase.js';
 import fetch from 'node-fetch';
 import rateLimit from 'express-rate-limit';
-
+import path from 'path';
 
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
-console.log(process.env.TELEGRAM_CHAT_ID)
+
+
 app.use(bodyParser.json());
-app.use(cors({ origin: 'http://localhost:3000' }))
+app.use(cors({ origin: ['http://localhost:3000', 'http://http://13.55.226.8:3000/'] }))
+
+
 async function sendTelegramNotification(message) {
     const chatId = process.env.TELEGRAM_CHAT_ID;
     console.log(chatId)
     const botToken = process.env.TELEGRAM_BOT_TOKEN;
     const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
-const limiter = rateLimit({
-  windowMs: 5 * 60 * 1000, // 5 minutes window
-  max: 1, // Limit each IP to 1 request per windowMs
-  message: 'Too many requests from this IP, please try again later.',
-});
+
     try {
 
         const response = await fetch(url, {
@@ -41,11 +40,19 @@ const limiter = rateLimit({
         console.error('Error sending Telegram notification:', error);
     }
 }
+
 const limiter = rateLimit({
   windowMs: 3 * 60 * 1000, 
   max: 1, 
   message: 'Too many requests from this IP, please try again later.',
 });
+
+app.use(express.static('public'));
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(process.cwd(), 'src','views', 'Home.vue')); // Adjust the path if needed
+});
+
 app.use('/checkout', limiter);
 app.post('/checkout', async (req, res) => {
   const { name, email, phone, cart } = req.body;
@@ -77,7 +84,27 @@ app.post('/checkout', async (req, res) => {
 
   res.status(200).json({ message: 'Purchase Request Submitted!' });
 });
+app.use('/submit-message', limiter);
+app.post('/submit-message', async (req, res) => {
+  const {suggestion} = req.body;
+  if (!suggestion || suggestion.trim().length === 0) {
+    return res.status(400).json({ success: false, error: 'Message is required' });
+  } 
+  try {
+    const suggestionRef = db.collection('suggestions').doc();
+    await suggestionRef.set({
+      content:suggestion,
+      timestamp:new Date(),
+    })
+    sendTelegramNotification("A new suggestion has been posted by a user: " + suggestion)
+    console.log("Suggestion stored in database");
+    res.status(200).json({ success: true });
 
+  } catch(error){
+    console.error("Error saving suggestion", error)
+    res.status(500).json({success:false, error:"Server has an error"})
+  }
+})
 
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);

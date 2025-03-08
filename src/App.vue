@@ -1,14 +1,15 @@
 <script setup>
+import { useRoute } from "vue-router";
 import topheading from '@/components/logoandheading.vue'
 import navbar from '@/components/navbar.vue'
-import mainbody from '@/components/mainbody.vue'
 import footersection from '@/components/footer.vue'
-import {ref} from "vue";
+
+const route = useRoute();
 </script>
 
 <template>
   <div class="flex flex-col min-h-screen">
-    <header class="bg-peach flex flex-col justify-between items-center h-48">
+    <header v-if="route.path !== '/'"  class="bg-peach flex flex-col justify-between items-center h-48">
         <topheading />
         <navbar />
     </header>
@@ -17,7 +18,7 @@ import {ref} from "vue";
       <router-view></router-view>
     </main>
 
-    <footersection class="mt-auto" />
+    <footersection v-if="route.path !== '/'"  class="mt-auto" />
   </div>
 </template>
 

@@ -61,7 +61,7 @@ async function submitCheckout() {
     }
 
     try {
-        const response = await fetch('http://localhost:5000/checkout', {
+        const response = await fetch('http://13.55.226.8:3000/checkout', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -110,8 +110,8 @@ async function submitCheckout() {
           <input v-model="phone" id="phone" type="tel" placeholder="Enter your phone number" class="border p-2 rounded-md w-full">
           </div>
         </div>
-        <div class="h-fit">
-          <div class="cart-item h-25 flex items-center" v-for="item in checkoutCart" :key="item.shirtname">
+        <div class="h-fit max-h-75 overflow-y-auto">
+          <div class="cart-item h-25 flex items-center " v-for="item in checkoutCart" :key="item.shirtname">
               <img class="cart-item-img w-1/4" :src="`/images/${item.sampleimg}`">
               <div class="cart-item-details w-5/6 flex flex-col gap-2">
                 <p class=" text-m">
@@ -133,12 +133,11 @@ async function submitCheckout() {
               <div>${{item.totalPrice}}</div>
             </div>
           </div>
-          <div class="text-right mt-2 mb-2">Subtotal: ${{calculateCheckoutPrice()}}</div> 
-        
       </div>
-        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">
-          Submit Order
-        </button>
+      <div class="text-right mt-2 mb-2">Subtotal: ${{calculateCheckoutPrice()}}</div> 
+      <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">
+        Submit Order
+      </button>
       </form>
       
       <button @click="$router.push('/shop')" class="mt-4 w-full bg-gray-200 text-gray-700 py-2 rounded-md hover:bg-gray-300">

@@ -1,17 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Blog from '@/views/Blog.vue';
+import SuggestionBox from '@/views/SuggestionBox.vue';
 import Home from '@/views/Home.vue';
-import Members from '@/views/Memberpage.vue';
+import AboutUs from '@/views/AboutUs.vue';
 import Shop from '@/views/Shop.vue';
-import Joinus from '@/views/Joinus.vue';
+import FAQ from '@/views/FAQ.vue';
 import Checkout from '@/views/Checkout.vue'
 
 const routes = [
   { path: '/', component: Home, name: 'Home' },
-  { path: '/blog', component: Blog, name: 'blog' },
-  { path: '/members', component: Members, name: 'members' },
+  { path: '/SuggestionBox', component: SuggestionBox, name: 'blog' },
+  { path: '/AboutUs', component: AboutUs, name: 'AboutUs' },
   { path: '/shop', component: Shop, name: 'shop' },
-  { path: '/joinus', component: Joinus, name: 'Joinus' },
+  { path: '/FAQ', component: FAQ, name: 'FAQ' },
   { path: '/checkout', 
     component: Checkout ,
     name:'Checkout',

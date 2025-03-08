@@ -40,15 +40,13 @@ function toggleImage(){
       <div class="rounded-3xl p-4 flex flex-col justify-between items-center w-83 h-full w-full ">
         <div class=" w-full text-left text-lg font-extrabold"><p class="font-black">{{shirtname}} </p></div>
         <div class="relative h-70 w-full flex items-center justify-center">
-          <button @click="toggleImage" class="absolute left-0 p-2 bg-gray-200 rounded-full shadow-md hover:bg-gray-300">
+          <button @click="toggleImage" class="absolute left-0 p-2 w-9 bg-white rounded-full shadow-md hover:bg-gray-300">
             ⬅
           </button>
-
           <img :src="showFront ? `/images/${sampleimg}` : `/images/${backsampleimg}`" :alt="shirtname"
             class="h-full"
           />
-
-          <button @click="toggleImage" class="absolute right-0 p-2 bg-gray-200 rounded-full shadow-md hover:bg-gray-300">
+          <button @click="toggleImage" class="absolute w-9 right-0 p-2 bg-white rounded-full shadow-md hover:bg-gray-300">
             ➡
           </button>
         </div>

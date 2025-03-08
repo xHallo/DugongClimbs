@@ -117,8 +117,17 @@ function minusItem(shirt){
   }
  
 }
-function deleteFromCart(shirt){
-  cartStore.cart.splice(shirt,1)
+function deleteFromCart(shirt) {
+  const index = cartStore.cart.findIndex(
+    (item) =>
+      item.shirtname === shirt.shirtname &&
+      item.shirtedition === shirt.shirtedition &&
+      item.size === shirt.size
+  );
+
+  if (index !== -1) {
+    cartStore.cart.splice(index, 1);
+  }
 }
 
 function calculateCartPrice(){
@@ -134,14 +143,17 @@ function calculateCartPrice(){
 <template>
   <main class="scrollbarfix bg-peach p-15 h-165 font-display  overflow-y-auto">
     <div class="flex w-full justify-between">
-      <h2 class="text-4xl font-nav">New Releases</h2>
+      <h2 class="text-xl w-full lg:text-4xl font-nav ">New Releases</h2>
       <div class="flex justify-between w-95 ">
         <div class="search flex items-center p-1 rounded-xl border-2 ">
           <Search />
           <searchBar @search="filtersearch" />
         </div>
         <div class="relative">
-          <button class="peer hover:cursor-pointer" @click="showcart=!showcart"><Cart /></button>
+          <button class="peer hover:cursor-pointer pr-1" @click="showcart=!showcart">
+            <div v-if="cartStore.cart.length>0" class="rounded-full bg-red-600 h-4 w-4 absolute top-0 right-0 text-xs text-center text-white">{{ cartStore.cart.reduce((total, item) => total + item.quantity, 0) }}</div>
+            <Cart />
+          </button>
           <div v-if="showcart" ref="cartContainer" :class="cartClasses">
             <h2 class="h-13 text-2xl">My Cart</h2>
             <div class="cart-item h-25 flex " v-for="item in cartStore.cart" :key="item.shirtname">
@@ -156,9 +168,9 @@ function calculateCartPrice(){
                   </h4>
                   <h4 class="text-xs italic  text-gray-700">Size: {{ item.size }}</h4>
                 </div>
-                <div class="quantityAdjustment flex gap-3 items-center justify-start">
+                <div class="quantityAdjustment flex gap-2 items-center justify-start">
                   <button type="button" class="border px-1 hover:cursor-pointer w-5" @click="plusItem(item)">+</button>
-                  <p class="w-2 text-center">{{item.quantity}}</p>
+                  <p class="w-5 text-center">{{item.quantity}}</p>
                   <button type="button" class="border px-1 hover:cursor-pointer w-5" @click="minusItem(item)">-</button>
                 </div>
               </div>

@@ -1,22 +1,32 @@
 <script setup>
 import instagramicon from "./icons/instagramicon.vue"
+import  phoneicon from "./icons/phone.vue"
 </script>
 
 <template>
-  <div class="flex flex-row justify-between w-full h-34">
-            <div class="flex items-center justify-start pl-30 w-1/3 ">
-              <a href="https://www.instagram.com/dugongclimbs/" target="_blank">
-                <instagramicon />
-              </a>
+  <div class="flex flex-row justify-between w-full h-full py-5">
+            <div class="flex items-center justify-start pl-30 w-full  "> 
             </div>
-            <div class="flex items-center justify-center space-x-2 w-1/3">
-              <img src="" alt="dugong" class="w-100 h-6">
+            <div class="relative flex items-center justify-center space-x-2 w-full ">
+              <img src="/images/dugong.psd.svg" alt="dugong" class="absolute mt-25 mr-200 h-200 lg:mt-30 lg:mr-15 lg:h-70   ">
             </div>
-            <div class="w-1/3 flex items-center justify-evenly ">
-              <p>Contact us:</p>
-              <div>
-                <p class="font-display">Email: ryanwee@gmail.com</p>
-                <p>Phone: +65 999 999 999</p>
+            <div class="flex justify-center items-center w-full ">
+              <div class="justify-center w-full flex items-center gap-5"> 
+                <p class="text-s lg:text-lg text-center">Contact us:</p>
+                <div>
+                  <div class="flex items-center space-x-2">
+                    <a href="https://www.instagram.com/dugongclimbs/" target="_blank">
+                      <instagramicon />
+                    </a>
+                    <p class="font-display text-s lg:text-lg w-full">@dugongclimbs</p>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <div>
+                      <phoneicon />
+                    </div>
+                    <p class="font-display text-s lg:text-lg w-full"> +65 999 999 999</p>
+                  </div>
+               </div>
               </div>
             </div>
           </div>
