@@ -8,17 +8,17 @@ const route = useRoute();
 </script>
 
 <template>
-  <div class="flex flex-col min-h-screen">
-    <header v-if="route.path !== '/'"  class="bg-peach flex flex-col justify-between items-center h-48">
+  <div class="flex flex-col min-h-screen min-w-screen w-screen">
+    <header v-if="route.path !== '/'"  class="bg-peach flex flex-col justify-between items-center h-48 min-w-screen">
         <topheading />
         <navbar />
     </header>
 
-    <main class="flex-1">
+    <main class="flex flex-col flex-grow justify-center">
       <router-view></router-view>
     </main>
 
-    <footersection v-if="route.path !== '/'"  class="mt-auto" />
+    <footersection v-if="route.path !== '/'"  class="h-fit" />
   </div>
 </template>
 

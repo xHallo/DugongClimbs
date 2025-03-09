@@ -2,7 +2,7 @@
 
 <template>
 
-  <div class="h-165 flex flex-col items-center justify-center font-display  gap-10 text-start text-brown-300 px-15 text-sm xl:text-xl xl:px-60">
+  <div class="lg:h-165 flex-grow flex flex-col items-center justify-center font-display  gap-10 text-start text-brown-300 px-15 text-sm xl:text-xl xl:px-60">
     <div class="w-full">
       <h1 >Q: How do I know my shirt size?</h1>
       <p>A: Even though we are dugongs, we have sized the shirt according to human proportions. You can refer to this sizing chart (make this a link) here!</p>

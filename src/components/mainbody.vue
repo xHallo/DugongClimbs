@@ -47,7 +47,6 @@ const handleCheckout = () => {
   });
 }
 };
-// Add scrollbar only if height exceeds threshold
   function updateScrollbarHeight() {
   if (cartContainer.value) {
   
@@ -65,7 +64,7 @@ watch(cartStore.cart, () => {
 
 
 const cartClasses = computed(() => {
-  return `scrollbarfix ease-in-out duration-300 transition-all block absolute w-95 bg-white max-h-120 h-fit border rounded-xl top-12 right-0 p-3 visible peer-hover:visible z-40 ${
+  return `scrollbarfix ease-in-out duration-300 transition-all block absolute w-80 md:w-95 bg-white md:max-h-120 h-fit border rounded-xl top-12 -right-7 md:right-0 p-3 z-40 ${
   scrollbarHeight.value >= 440 ? "overflow-y-auto" : "overflow-hidden"}`;});
 
 // Cart functions
@@ -141,10 +140,10 @@ function calculateCartPrice(){
 
 
 <template>
-  <main class="scrollbarfix bg-peach p-15 h-165 font-display  overflow-y-auto">
-    <div class="flex w-full justify-between">
-      <h2 class="text-xl w-full lg:text-4xl font-nav ">New Releases</h2>
-      <div class="flex justify-between w-95 ">
+  <main class="scrollbarfix bg-peach p-5 sm:p-15 flex-grow font-display  overflow-y-auto">
+    <div class="flex w-full gap-5 justify-between flex-col sm:flex-row ">
+      <h2 class="text-2xl w-full lg:text-4xl font-nav text-center sm:text-start">New Releases</h2>
+      <div class="flex lg:justify-start justify-center">
         <div class="search flex items-center p-1 rounded-xl border-2 ">
           <Search />
           <searchBar @search="filtersearch" />
@@ -189,7 +188,7 @@ function calculateCartPrice(){
       </div>
     </div>
       
-    <div class=" relative flex flex-wrap flex-row text-sm justify-start items-center w-full h-fit pt-10 gap-7" >
+    <div class=" relative flex flex-wrap flex-row text-sm justify-center sm:justify-start items-center w-fit h-fit pt-10 gap-7" >
       <div v-if="filteredshirtdet.length<1" class="flex items-center h-113 text-lg pb-10 opacity-70 w-full justify-center"> No Items Found </div>
       <SelectSize v-if="selectedShirt" :shirtname="selectedShirt.shirtname" :shirtedition = 'selectedShirt.shirtedition' :shirtprice="selectedShirt.shirtprice" :sampleimg="selectedShirt.sampleimg" :backsampleimg="selectedShirt.backsampleimg" @confirmSize = "confirmSize" />
       <div class="z-1" v-for="shirt in filteredshirtdet" :key="shirt.shirtname"  >

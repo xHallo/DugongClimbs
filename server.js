@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5000;
 
 
 app.use(bodyParser.json());
-app.use(cors({ origin: ['http://localhost:3000', 'http://13.55.226.8:3000/'] }))
+app.use(cors({ origin: ['http://localhost:3000', 'http://13.55.226.8:3000', 'http://dugongclimbs.store'] }))
 
 
 async function sendTelegramNotification(message) {
@@ -42,7 +42,7 @@ async function sendTelegramNotification(message) {
 }
 
 const limiter = rateLimit({
-  windowMs: 3 * 60 * 1000, 
+  windowMs: 1 * 60 * 1000, 
   max: 1, 
   message: 'Too many requests from this IP, please try again later.',
 });

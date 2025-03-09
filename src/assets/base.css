@@ -6,6 +6,13 @@
   box-sizing: border-box;
   font-weight: normal;
 }
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   min-height:100vh;
@@ -34,6 +41,7 @@ body {
 }
 #app {
   min-height:100vh;
+  width:100%;
 }
 .scrollbarfix {
   scrollbar-gutter: stable;

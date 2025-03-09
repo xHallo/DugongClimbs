@@ -2,7 +2,7 @@
 
 <template>
 
-  <div class="lg:h-165 h-50 flex flex-col items-center justify-start font-display text-sm px-15 xl:text-xl xl:px-60 gap-10 py-10">
+  <div class="lg:h-165  flex flex-col items-center justify-start font-display text-sm px-15 xl:text-xl xl:px-60 gap-10 py-10">
     <h1 class="text-3xl font:extrabold text-brown-300">About Us</h1>
     <p class="text-brown-300">We are a group of dugongs in Singapore river that got bored of sleeping underwater and decided to start climbing one day. After our flippers touched those plastic holds and sticky chalk, we got addicted and decided we wanted our own shirt designs. 
 <br><br>

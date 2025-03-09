@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class=" h-screen w-screen bg-[url('/images/Damienhu.jpg')] bg-cover bg-center flex items-center justify-center items-center text-white text-center">
+  <div class=" h-screen w-screen bg-[url('/images/Triplehang.jpg')] bg-cover bg-center flex items-center justify-center items-center text-white text-center">
     <div class="w-full h-full bg-black/50 p-6 flex flex-col justify-center items-center bg-opacity-50 rounded-lg shadow-lg">
       <h1 class="text-7xl font-bold mb-4">Welcome to Dugong Climbs</h1>
       <p class="text-3xl">Please support this Dugong, he's malnourished.</p>

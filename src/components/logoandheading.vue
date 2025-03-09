@@ -5,31 +5,30 @@ import  phoneicon from "./icons/phone.vue"
 
 <template>
   <div class="flex flex-row justify-between w-full h-full py-5">
-            <div class="flex items-center justify-start pl-30 w-full  "> 
-            </div>
-            <div class="relative flex items-center justify-center space-x-2 w-full ">
-              <img src="/images/dugong.psd.svg" alt="dugong" class="absolute mt-25 mr-200 h-200 lg:mt-30 lg:mr-15 lg:h-70   ">
-            </div>
-            <div class="flex justify-center items-center w-full ">
-              <div class="justify-center w-full flex items-center gap-5"> 
-                <p class="text-s lg:text-lg text-center">Contact us:</p>
-                <div>
-                  <div class="flex items-center space-x-2">
-                    <a href="https://www.instagram.com/dugongclimbs/" target="_blank">
-                      <instagramicon />
-                    </a>
-                    <p class="font-display text-s lg:text-lg w-full">@dugongclimbs</p>
-                  </div>
-                  <div class="flex items-center space-x-2">
-                    <div>
-                      <phoneicon />
-                    </div>
-                    <p class="font-display text-s lg:text-lg w-full"> +65 999 999 999</p>
-                  </div>
-               </div>
-              </div>
-            </div>
+    <div class="lg:flex w-full hidden "></div>
+    <div class="relative flex items-center justify-center space-x-2 w-full ">
+      <img src="/images/dugonglogo.png" alt="dugong" class=" absolute lg:h-30 h-20   ">
+    </div>
+    <div class="flex justify-center items-center w-full ">
+      <div class="justify-center w-full flex items-center gap-5"> 
+        <p class="text-s hidden lg:text-lg lg:flex text-center">Contact us:</p>
+        <div>
+          <div class="flex items-center space-x-2">
+            <a href="https://www.instagram.com/dugongclimbs/" target="_blank">
+              <instagramicon />
+            </a>
+            <p class="font-display text-s lg:text-lg w-full">@dugongclimbs</p>
           </div>
+          <div class="flex items-center space-x-2">
+            <div>
+              <phoneicon />
+            </div>
+            <p class="font-display text-s lg:text-lg w-full text-gray-600 italic"> Available Soon!</p>
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style scoped>
