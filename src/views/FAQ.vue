@@ -2,10 +2,10 @@
 
 <template>
 
-  <div class="lg:h-165 flex-grow flex flex-col items-center justify-center font-display  gap-10 text-start text-brown-300 px-15 text-sm xl:text-xl xl:px-60">
+  <div class="lg:h-165 py-8 flex-grow flex flex-col items-center justify-center font-display  gap-10 text-start text-brown-300 px-15 text-sm xl:text-xl xl:px-60">
     <div class="w-full">
       <h1 >Q: How do I know my shirt size?</h1>
-      <p>A: Even though we are dugongs, we have sized the shirt according to human proportions. You can refer to this sizing chart (make this a link) here!</p>
+      <p>A: Even though we are dugongs, we have sized the shirt according to human proportions. You can refer to this sizing chart <a href="/sizing" target="_blank" class="text-blue-500 underline hover:text-indigo-700">here</a> </p>
     </div>
     <div class="w-full">
       <h1 >Q: Do you guys ship overseas (outside of Singapore)?</h1>
@@ -13,15 +13,15 @@
     </div>
     <div class="w-full">
       <h1 >Q: Can i cancel my order or modify it after it is placed?</h1>
-      <p>A: You can contact us at x number and we will see what we can do for you!</p>
+      <p>A: You can contact us at our instagram @dugongclimbs and we will see what we can do for you!</p>
     </div>
     <div class="w-full">
       <h1 >Q: What is your return policy?</h1>
-      <p>A: We offer returns within [X] number of days. Clothing must be unworn, unwashed and still in original packaging!</p>
+      <p>A: We offer returns within 3 days. Clothing must be unworn, unwashed and still in original packaging!</p>
     </div>
     <div class="w-full">
       <h1 >Q: How do I start a return/exchange?</h1>
-      <p>A: You can contact us at x number and we will get in touch with you!</p>
+      <p>A: You can contact us at our instagram @dugongclimbs and we will get in touch with you!</p>
     </div>
     <div class="w-full">
       <h1 >Q: What grade do you guys send normally?</h1>

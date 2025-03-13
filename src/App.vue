@@ -9,7 +9,7 @@ const route = useRoute();
 
 <template>
   <div class="flex flex-col min-h-screen min-w-screen w-screen">
-    <header v-if="route.path !== '/'"  class="bg-peach flex flex-col justify-between items-center h-48 min-w-screen">
+    <header v-if="route.path !== '/' && route.path !== '/sizing'"  class="bg-peach flex flex-col justify-between items-center h-48 min-w-screen">
         <topheading />
         <navbar />
     </header>
@@ -18,7 +18,7 @@ const route = useRoute();
       <router-view></router-view>
     </main>
 
-    <footersection v-if="route.path !== '/'"  class="h-fit" />
+    <footersection v-if="route.path !== '/' && route.path !== '/sizing'"  class="h-fit" />
   </div>
 </template>
 
